@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Connexion')),
+      appBar: AppBar(title: Text('Connectez-Vous')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
