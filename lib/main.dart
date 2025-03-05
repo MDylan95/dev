@@ -8,13 +8,27 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Identification Des Etudiants',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false, // Supprime le bandeau "Debug"
+      theme: ThemeData(
+        useMaterial3: true, // Active Material 3
+        colorSchemeSeed: Colors.blue, // Couleur principale
+        brightness: Brightness.light, // Mode clair
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.blue,
+        brightness: Brightness.dark, // Mode sombre
+      ),
+      themeMode: ThemeMode.system, // Basé sur les préférences du téléphone
       home: LoginPage(),
+      routes: {
+        '/login': (context) =>
+            LoginPage(), // Ajout de la route pour la connexion
+      },
     );
   }
 }
